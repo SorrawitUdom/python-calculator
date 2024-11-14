@@ -23,7 +23,11 @@ class TestCalculator(unittest.TestCase):
     def test_multiply(self):
         #new testcase for multiply method
         self.assertEqual(self.calc.multiply(5, 2), 10)
-        self.assertEqual(self.calc.multiply(2, -5), -10)               
+        self.assertEqual(self.calc.multiply(2, -5), -10)  
+
+    def test_divide(self):
+        self.assertEqual(self.calc.divide(4,0), ZeroDivisionError)    
+        self.assertEqual(self.calc.divide(-4,2),- 2)   
 
 if __name__ == '__main__':
     unittest.main()
