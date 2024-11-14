@@ -29,5 +29,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(4,0), ZeroDivisionError)    
         self.assertEqual(self.calc.divide(-4,2),- 2)   
 
+    def test_modulo(self):
+        self.assertEqual(self.calc.modulo(0,-2), 0)
+        self.assertEqual(self.calc.modulo(-69,-2), -1)
+
 if __name__ == '__main__':
     unittest.main()

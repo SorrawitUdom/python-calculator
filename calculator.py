@@ -41,9 +41,15 @@ class Calculator:
         return result
     
     def modulo(self, a, b):
-        while a <= b:
-            a = a-b
-        return a
+        # while a >= b:
+        #     a = a-b
+        c = self.divide(a,b)
+        if c == ZeroDivisionError:
+            return c
+        d = self.subtract(a,self.multiply(c,b))
+        if c < 0:
+            d = d+b
+        return d
 
 # Example usage:
 if __name__ == "__main__":
