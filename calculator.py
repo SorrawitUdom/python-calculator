@@ -22,9 +22,22 @@ class Calculator:
 
     def divide(self, a, b):
         result = 0
-        while a > b:
+        aLessThanZeroFlag = 0
+        bLessThanZeroFlag = 0
+        if b == 0:
+            return ZeroDivisionError
+        if a < 0:
+            aLessThanZeroFlag = 1
+            a = 0-a
+        if b < 0:
+            bLessThanZeroFlag = 1
+            b = 0-b
+        while a >= b:
             a = self.subtract(a, b)
-            result += 1
+            if aLessThanZeroFlag == bLessThanZeroFlag:
+                result += 1
+            else:
+                result -= 1
         return result
     
     def modulo(self, a, b):
