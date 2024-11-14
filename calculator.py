@@ -3,12 +3,21 @@ class Calculator:
         return a + b
 
     def subtract(self, a, b):
-        return b - a
+        #original code is 
+        #return b-a
+        return a - b
 
     def multiply(self, a, b):
         result = 0
-        for i in range(b+1):
-            result = self.add(result, a)
+        #chage from range(b+1) to range(b)
+        if b >= 0:
+            for i in range(b):
+                result = self.add(result, a)
+        else:
+            newB = self.subtract(0,b)
+            for i in range(newB):
+                result = self.subtract(result, a)
+
         return result
 
     def divide(self, a, b):
